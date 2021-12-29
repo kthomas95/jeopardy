@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital@0;1&family=IBM+Plex+Sans+Condensed:ital@0;1&family=IBM+Plex+Sans:ital,wght@0,100;0,400;0,700;1,100;1,400;1,700&family=IBM+Plex+Serif:ital@0;1&display=swap");
+
 body {
     @apply bg-jep-blue text-gray-200;
+}
+
+.btn {
+    @apply rounded-md px-2 font-semibold active:shadow-xl;
+}
+
+.success-inter {
+    @apply bg-green-600 hover:bg-green-500 text-gray-900;
+}
+
+* {
+    @apply ring-blue-500;
+}
+
+.primary-inter {
+    @apply bg-blue-500 hover:bg-blue-400 active:bg-blue-300 text-slate-800;
+}
+
+.error-inter {
+    @apply bg-red-500 hover:bg-red-400;
+}
+
+input {
+    @apply focus:outline-none focus:ring-2;
 }

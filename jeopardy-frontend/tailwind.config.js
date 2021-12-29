@@ -8,6 +8,9 @@ module.exports = {
             colors: {
                 "jep-blue": "#010a78",
             },
+            fontFamily: {
+                sans: ['"IBM Plex Sans"', "sans-serif"],
+            },
         },
     },
     plugins: [],
