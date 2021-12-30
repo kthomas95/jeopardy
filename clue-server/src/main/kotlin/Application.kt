@@ -11,12 +11,17 @@ fun Application.module(testing: Boolean = false) {
     seasons.forEach {
         println("${it.key}: ${it.value.categories.size}")
     }
+    install(CORS) {
+        anyHost()
+    }
     install(ContentNegotiation) {
         json()
     }
     routing {
-        get("/") {
-            call.respond(seasons.getRandomCategory())
+        get("/{amount}") {
+            val amount = call.parameters["amount"]?.toInt() ?: 1
+            val response = List(amount.coerceAtMost(6)) { seasons.getRandomCategory() }
+            call.respond(response)
         }
     }
 }
