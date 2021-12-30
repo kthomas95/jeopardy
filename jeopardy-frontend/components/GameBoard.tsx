@@ -18,10 +18,8 @@ const GameCategory = ({
     ) ?? [-1, -1];
 
     return (
-        <div className="text-center grid grid-rows-[max-content] auto-rows-fr gap-2">
-            <h3 className="font-bold p-4">
-                {title} {column}
-            </h3>
+        <div className="text-center grid grid-rows-[4rem] auto-rows-fr gap-2">
+            <h3 className="font-bold p-2 text-sm self-center">{title}</h3>
             {clues.map((clue, index) => (
                 <GameClue key={clue.amount} {...clue} />
             ))}
@@ -57,12 +55,8 @@ export const GameBoard = () => {
                     <GamePlayer key={player.name} {...player} />
                 ))}
             </div>
-            <div className="bg-slate-900 p-2">
+            <div className="bg-slate-900 py-2 px-4">
                 <b>{status.currentPlayer}</b> has control of the board.
-                {status.currentClue}
-                <button className="btn primary-inter float-right">
-                    Advance to double jeopardy
-                </button>
             </div>
         </div>
     );
